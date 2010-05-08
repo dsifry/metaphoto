@@ -1,0 +1,53 @@
+# The api key, secret key, and canvas page name are required to get started
+# Tunnel configuration is only needed if you are going to use the facebooker:tunnel Rake tasks
+# Your callback url in Facebook should be set to http://public_host:public_port
+# If you're building a Facebook connect site,
+#    change the value of set_asset_host_to_callback_url to false
+# To develop for the new profile design, add the following key..
+# api: new
+#ssh -gNR 3000:localhost:3000 www.fluidtickets.com -l root
+
+# remove the key or set it to anything else to use the old facebook design.
+# This should only be necessary until the final version of the new profile is released.
+# should now be pushed to prod server - touch
+
+development:
+  api_key: 5706d3ca1d3e1d991631e1728e6d9386
+  secret_key: 2e88d8c0109e592eab62a756a20fce18
+  canvas_page_name: splendoo-dev
+  callback_url: http://localhost:3001
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
+  tunnel:
+    public_host_username: dsifry
+    public_host: ob.gd
+    public_port: 3000
+    local_port: 3000
+    server_alive_interval: 0
+
+test:
+  api_key:
+  secret_key:
+  canvas_page_name:
+  callback_url:
+  set_asset_host_to_callback_url: true
+  tunnel:
+    public_host_username:
+    public_host:
+    public_port: 4007
+    local_port: 3000
+    server_alive_interval: 0
+
+production:
+  api_key: 8bf64cec28b4c9372c3b70c29b367388
+  secret_key: e95d3bec154120ca116e0f1b612794f5
+  canvas_page_name: splendoo
+  callback_url: http://beta.splendoo.com
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
+  tunnel:
+    public_host_username:
+    public_host:
+    public_port: 3000
+    local_port: 3000
+    server_alive_interval: 0

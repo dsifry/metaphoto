@@ -1,0 +1,19 @@
+<% title "Venue Types" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% for venue_type in @venue_types %>
+    <tr>
+      <td><%=h venue_type.name %></td>
+      <td><%=h venue_type.description %></td>
+      <td><%= link_to "Show", venue_type %></td>
+      <td><%= link_to "Edit", edit_venue_type_path(venue_type) %></td>
+      <td><%= link_to "Destroy", venue_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Venue Type", new_venue_type_path %></p>

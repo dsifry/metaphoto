@@ -1,0 +1,7 @@
+<% title "New Photo" %>
+<%= f.error_messages %>
+
+<%= render :partial => 'form' :locals =>
+  { :p => @photo } %>
+
+<p><%= link_to "Back to List", photos_path %></p>

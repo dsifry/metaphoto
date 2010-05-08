@@ -1,0 +1,108 @@
+<% form_for @activity, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :activity_type %><br />
+    <%= f.text_field :activity_type %>
+  </p>
+  <p>
+    <%= f.label :points %><br />
+    <%= f.text_field :points %>
+  </p>
+  <p>
+    <%= f.label :friend_points %><br />
+    <%= f.text_field :friend_points %>
+  </p>
+  <p>
+    <%= f.label :photo_points %><br />
+    <%= f.text_field :photo_points %>
+  </p>
+  <p>
+    <%= f.label :place_points %><br />
+    <%= f.text_field :place_points %>
+  </p>
+  <p>
+    <%= f.label :bonus_points %><br />
+    <%= f.text_field :bonus_points %>
+  </p>
+  <p>
+    <%= f.label :quest_id %><br />
+    <%= f.text_field :quest_id %>
+  </p>
+    <p>
+      <strong>Place:</strong>
+    </p>
+    <div style="padding-left:30px;">
+      <% f.fields_for :place do |p| %>
+          <p>
+            <%= link_to "New Place", new_place_path %>
+          </p>
+          <p>
+            <%= p.collection_select(:name, Place.all(:order => 'name ASC'), :name, :name, {:prompt => true}) %>
+          </p>
+      <% end %>
+    </div>
+    <p>
+      <strong>Photo:</strong>
+    </p>
+    <div style="padding-left:30px;">
+      <% f.fields_for :photo do |p| %>
+          <p>
+            <%= p.label :user_id %><br />
+            <%= p.text_field :user_id %>
+          </p>
+          <p>
+            <%= p.label :latitude %><br />
+            <%= p.text_field :latitude %>
+          </p>
+          <p>
+            <%= p.label :longitude %><br />
+            <%= p.text_field :longitude %>
+          </p>
+          <p>
+            <%= p.label :altitude %><br />
+            <%= p.text_field :altitude %>
+          </p>
+          <p>
+            <%= p.label :place_id %><br />
+            <%= p.text_field :place_id %>
+          </p>
+          <p>
+            <%= p.label :takendate %><br />
+            <%= p.datetime_select :takendate %>
+          </p>
+          <p>
+            <%= p.label :datahash %><br />
+            <%= p.text_field :datahash %>
+          </p>
+          <p>
+            <%= p.label :processed %><br />
+            <%= p.check_box :processed %>
+          </p>
+          <p>
+            <%= p.label :confirmed %><br />
+            <%= p.check_box :confirmed %>
+          </p>
+          <p>
+            <%= p.label :subjectline %>
+            <%= p.text_field :subjectline %>
+          </p>
+          <p>
+            <%= p.label :message %>
+            <%= p.text_field :message %>
+          </p>
+          <p>
+            <%= p.label :pic, "Photo" %>
+            <%= p.file_field :pic %>
+            <span class="hint">We accept JPEG, GIF, or PNG files up to 10 MB.</span>
+            <% if @photo.pic.exists? %>
+                <%= image_tag @photo.pic.url(:medium) %>
+            <% end %>
+          </p>
+          </div>
+      <% end %>
+      <p><%= f.submit %></p>
+<% end %>

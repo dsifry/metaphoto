@@ -1,0 +1,39 @@
+<% title "Photos" %>
+
+<table>
+  <tr>
+    <th>Activity</th>
+    <th>User</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Altitude</th>
+    <th>Place</th>
+    <th>Takendate</th>
+    <th>Datahash</th>
+    <th>Processed</th>
+    <th>Confirmed</th>
+    <th>Subjectline</th>
+    <th>Message</th>
+  </tr>
+  <% for photo in @photos %>
+    <tr>
+      <td><%=h photo.activity_id %></td>
+      <td><%=h photo.user_id %></td>
+      <td><%=h photo.latitude %></td>
+      <td><%=h photo.longitude %></td>
+      <td><%=h photo.altitude %></td>
+      <td><%=h photo.place_id %></td>
+      <td><%=h photo.takendate %></td>
+      <td><%=h photo.datahash %></td>
+      <td><%=h photo.processed %></td>
+      <td><%=h photo.confirmed %></td>
+      <td><%=h photo.subjectline %></td>
+      <td><%=h photo.message %></td>
+      <td><%= link_to "Show", photo %></td>
+      <td><%= link_to "Edit", edit_photo_path(photo) %></td>
+      <td><%= link_to "Destroy", photo, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Photo", new_photo_path %></p>

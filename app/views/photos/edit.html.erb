@@ -1,0 +1,10 @@
+<% title "Edit Photo" %>
+<%= f.error_messages %>
+
+<%= render :partial => 'form' :locals =>
+  { :p => @photo } %>
+
+<p>
+  <%= link_to "Show", @photo %> |
+  <%= link_to "View All", photos_path %>
+</p>

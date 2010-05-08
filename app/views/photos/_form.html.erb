@@ -1,0 +1,59 @@
+<% form_for p, :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :activity_id %><br />
+    <%= f.text_field :activity_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </p>
+  <p>
+    <%= f.label :altitude %><br />
+    <%= f.text_field :altitude %>
+  </p>
+  <p>
+    <%= f.label :place_id %><br />
+    <%= f.text_field :place_id %>
+  </p>
+  <p>
+    <%= f.label :takendate %><br />
+    <%= f.datetime_select :takendate %>
+  </p>
+  <p>
+    <%= f.label :datahash %><br />
+    <%= f.text_field :datahash %>
+  </p>
+  <p>
+    <%= f.label :processed %><br />
+    <%= f.check_box :processed %>
+  </p>
+  <p>
+    <%= f.label :confirmed %><br />
+    <%= f.check_box :confirmed %>
+  </p>
+    <p>
+      <%= f.label :subjectline %>
+      <%= f.text_field :subjectline %>
+    </p>
+    <p>
+      <%= f.label :message %>
+      <%= f.text_field :message %>
+    </p>
+    <p>
+      <%= f.label :pic, "Photo" %>
+      <%= f.file_field :pic %>
+      <span class="hint">We accept JPEG, GIF, or PNG files up to 10 MB.</span>
+      <% if p.pic.exists? %>
+          <%= image_tag p.pic.url(:medium) %>
+      <% end %>
+    </p>
+  <p><%= f.submit %></p>
+<% end %>

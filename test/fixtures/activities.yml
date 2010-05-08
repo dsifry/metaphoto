@@ -1,0 +1,19 @@
+one:
+  user_id: 1
+  activity_type: 1
+  points: 1
+  friend_points: 1
+  photo_points: 1
+  place_points: 1
+  bonus_points: 1
+  quest_id: 1
+
+two:
+  user_id: 1
+  activity_type: 1
+  points: 1
+  friend_points: 1
+  photo_points: 1
+  place_points: 1
+  bonus_points: 1
+  quest_id: 1

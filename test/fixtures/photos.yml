@@ -1,0 +1,27 @@
+one:
+  activity_id: 1
+  user_id: 1
+  latitude: 9.99
+  longitude: 9.99
+  altitude: 9.99
+  place_id: 1
+  takendate: 2010-05-06 12:46:25
+  datahash: MyString
+  processed: false
+  confirmed: false
+  subjectline: false
+  message: MyText
+
+two:
+  activity_id: 1
+  user_id: 1
+  latitude: 9.99
+  longitude: 9.99
+  altitude: 9.99
+  place_id: 1
+  takendate: 2010-05-06 12:46:25
+  datahash: MyString
+  processed: false
+  confirmed: false
+  subjectline: false
+  message: MyText

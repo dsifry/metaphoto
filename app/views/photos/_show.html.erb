@@ -1,0 +1,51 @@
+<p>
+  <strong>Activity:</strong>
+  <%=h p.activity_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%=h p.user_id %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%=h p.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%=h p.longitude %>
+</p>
+<p>
+  <strong>Altitude:</strong>
+  <%=h p.altitude %>
+</p>
+<p>
+  <strong>Place:</strong>
+  <%=h p.place_id %>
+</p>
+<p>
+  <strong>Takendate:</strong>
+  <%=h p.takendate %>
+</p>
+<p>
+  <strong>Datahash:</strong>
+  <%=h p.datahash %>
+</p>
+<p>
+  <strong>Processed:</strong>
+  <%=h p.processed %>
+</p>
+<p>
+  <strong>Confirmed:</strong>
+  <%=h p.confirmed %>
+</p>
+<p>
+  <strong>Subjectline:</strong>
+  <%=h p.subjectline %>
+</p>
+<p>
+  <strong>Message:</strong>
+  <%=h p.message %>
+</p>
+<% if p.pic.exists? %>
+    <%= image_tag p.pic.url(:medium) %>
+<% end %>

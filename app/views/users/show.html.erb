@@ -1,0 +1,28 @@
+<% title "User" %>
+
+User ID: <%= @user.id %>
+
+<% if facebook_session %>
+
+<p>
+ I'm connected with facebook
+
+<% else %>
+    <b>Name:</b>
+    <%=h @user.name %>
+    <b>Email:</b>
+    <%=h @user.email %>
+    </p>
+
+<% end %>
+
+
+
+
+<%= link_to 'Edit', edit_user_path %>
+
+<% if facebook_session %>
+<a href="/logout_fb" onclick="FB.Connect.logout(function() { reload(); }); return false;" ><img id="fb_logout_image" src="http://static.ak.fbcdn.net/images/fbconnect/logout-buttons/logout_small.gif" alt="Connect"/></a>
+<% else %>
+<%= link_to 'logout', logout_path, :method => :delete %>
+<% end %>

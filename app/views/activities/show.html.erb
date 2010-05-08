@@ -1,0 +1,45 @@
+<% title "Activity" %>
+
+<p>
+  <strong>User:</strong>
+  <%=h @activity.user_id %>
+</p>
+<p>
+  <strong>Activity Type:</strong>
+  <%=h @activity.activity_type %>
+</p>
+<p>
+  <strong>Points:</strong>
+  <%=h @activity.points %>
+</p>
+<p>
+  <strong>Friend Points:</strong>
+  <%=h @activity.friend_points %>
+</p>
+<p>
+  <strong>Photo Points:</strong>
+  <%=h @activity.photo_points %>
+</p>
+<p>
+  <strong>Place Points:</strong>
+  <%=h @activity.place_points %>
+</p>
+<p>
+  <strong>Bonus Points:</strong>
+  <%=h @activity.bonus_points %>
+</p>
+<p>
+  <strong>Quest:</strong>
+  <%=h @activity.quest_id %>
+</p>
+
+<p><strong>Photo</strong></p>
+<div style="padding-left:30px">
+  <%= render :partial => "photos/show", :locals =>
+    { :p => @photo } %>
+</div>
+<p>
+  <%= link_to "Edit", edit_activity_path(@activity) %> |
+  <%= link_to "Destroy", @activity, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", activities_path %>
+</p>
